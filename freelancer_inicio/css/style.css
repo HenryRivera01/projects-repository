@@ -5,7 +5,7 @@
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
-    --grissClaro: #dfef93;
+    --grissClaro: #edf0df;
     
 }
 
@@ -58,6 +58,13 @@ body {
         }
     }
 
+/*Clase Encargada de establecer sombras*/
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(102,102,102,0.39);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
 
 /*Siempre hay que definir primero lo más general y luego lo más especifico*/
 
@@ -135,6 +142,7 @@ background-repeat: no-repeat; /*Para que la imagen no se repita*/
 background-size: cover; /*Le decimos a la imagen que tome todo el ancho disponible*/
 height: 450px;
 position: relative; /*El padre siempre debe tener posicion relativa*/
+margin-bottom: 2rem;
 }
 
 /*Transparencia de la imagen*/
@@ -156,4 +164,40 @@ justify-content: center;
 
 .contenido-hero h2, .contenido-hero p{
     color: var(--blanco);
+}
+
+/* Servicios */
+/*Organizando los servicios*/
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns:repeat(3, 1fr); /*3 columnas / 1fr= 1 fraccion del espacio, y que se repita tres veces*/
+        column-gap: 40px; /*Agregando separación entre columnas*/
+    }       
+}
+
+.servicio{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: bold;
+    text-align: center;
+}
+
+.servicio p{
+    line-height:2; /*Interlineado*/
+}
+
+.servicio .icono{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
