@@ -14,10 +14,11 @@
 /*Box Sizing por desarrollador de Chrome*/
 html {
     box-sizing: border-box;
+    scroll-snap-type: y mandatory ; /*Va a hacer Scroll snap horizontalmente con x y vertical con y*/
   }
   *, *:before, *:after {/* "*" selecciona todos los elementos del html y les aplica el boxsizing borderbox*/
     box-sizing: inherit; /* la coma aplica cambios a dos clases que necesitemos que tengan las mismas pripiedades, ejemplo: .titulo, .subtitulo*/
-  } /*El after es contenido que no existe ni se puede seleccionar y esta clase lo aplica el box sizing a todos los after y before*/
+    } /*El after es contenido que no existe ni se puede seleccionar y esta clase lo aplica el box sizing a todos los after y before*/
 
 
 html {
@@ -192,6 +193,16 @@ justify-content: center;
     color: var(--blanco);
 }
 
+
+.contenedor,
+.navegacion-principal,
+.sombra,
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+
 /* Servicios */
 /*Organizando los servicios*/
 @media (min-width: 768px) {
@@ -250,9 +261,25 @@ border: none;
     color: var(--primario);
 }
 
-.contenedor-campos{
 
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns:repeat(2, 1fr); /*2 columnas / 1fr= 1 fraccion del espacio, y que se repita dos veces*/
+        grid-template-rows: auto auto 20rem;
+        column-gap: 2rem; /*Agregando separación entre columnas*/
+    }
+    
+    .campo:nth-child(3),
+    .campo:nth-child(4)
+    {/*nth-child selecciona un elemento en especifico para hacer un cambio requerido, en este caso está seleccionando el tercer div perteneciente a la clase campo, ya que hay 4 div de clase campo*/
+        grid-column: 1 / 3; /*Le estamos diciendo que el input del correo vaya desde la columna 1 hasta la 3, hay soilo dos columnas pero se tiene en cuenta una más que es la de la separación entre ambas */
+        /*grid-row: 3 / 4;*/  /*Si quisieramos cambiar el orden sin tocar el html*/
+    }
 }
+
+
+
 
 .campo{
 margin-bottom: 1rem;
@@ -265,6 +292,10 @@ margin-bottom: 1rem;
     display: block;
 }
 
+.campo textarea {
+ height: 10rem;
+}
+
 .input-text{
     width: 100%;
     border: none;
@@ -274,4 +305,11 @@ margin-bottom: 1rem;
 
 .enviar .boton{
     width: 100%;
+}
+
+
+/*Footer*/
+
+.footer{
+text-align: center;
 }
