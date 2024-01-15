@@ -1,0 +1,329 @@
+/*Declaración Variables*/
+:root {
+--primario: #283B66;
+--primarioOscuro: #0A1733;
+--secundario: #FFD56B;
+--secundarioObscuro: #b89b52;
+--blanco: #FFF;
+--negro: #000;
+
+--fuentePrincipal: 'Work Sans', sans-serif;
+
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*1 rem = 10 px*/
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*Globales*/
+
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5; /*Interlineado*/
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenedor__texto {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+h1,h2,h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor__texto {
+    font-size: 4rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contenedor__texto {
+    font-size: 2.8rem;
+    }
+}
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{
+    margin: 4rem;
+}
+
+/*Footer*/
+
+.footer {
+ background-color: var(--primarioOscuro);
+ padding: 1rem 0;
+ margin-top: 2rem;
+}
+
+.footer__texto {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+    color: var(--blanco);
+    font-size: 1.5rem;
+}
+
+/*Navegacion*/
+
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 6rem; /*Separa los elementos entre sí, es una forma nueva de hacerlo*/
+
+}
+
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: var(--blanco);
+    font-size: 2.5rem;
+/*     margin-right: 2rem; */
+}
+
+/* .navegacion__enlace:last-of-type {
+    margin-right: 0;
+
+}  *//*Junto con el margin right de arriba esto lo que hace es quitarselo al ultimo elemento, de esta forma los enlaces quedan totalmente centrados, Sirve para reemplazar el gap en caso de que algún navegador genere porblñema*/
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{ /*Cambio de color cuando el cursor esté sobre los enlaces*/
+    color: var(--secundario);
+}
+
+/* Grid */
+
+.grid {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 2rem;
+    margin: 0 3.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid{ 
+    grid-template-columns:repeat(3, 1fr);
+    }
+}
+
+/* @media (min-width: 200px) {
+    .grid{
+    grid-template-columns: repeat(1);
+    }
+}
+ */
+/** Productos **/
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 2rem ;
+    border-radius: 2rem;
+}
+.producto__imagen {
+    border-radius: 2rem;
+    width: 100%;
+}
+.producto__informacion {
+
+}
+.producto__nombre {
+    font-size: 4rem;
+}
+
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+@media (min-width: 769px) {
+    .producto__nombre,
+    .producto__precio {
+    font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .producto__nombre,
+    .producto__precio {
+    font-size: 3rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .producto__nombre,
+    .producto__precio {
+    font-size: 2rem;
+    /* gap: auto auto; */
+    }
+}
+
+
+/* Graficos */
+
+.grafico {
+    min-height: 30rem;
+    margin: 2rem 0;
+}
+
+
+.grafico--camisas {
+    grid-row: 2 / 3; /* Le estamos diciendo que el div que tiene la clase grafico--camisas se ubique en la fila del 2 al 3, en pocas palabras en la segunda columna */
+    grid-column: 1 / 3;
+}
+
+@media (min-width: 768px) {
+    .grafico--camisas {
+        grid-row: 2 / 3; /* Le estamos diciendo que el div que tiene la clase grafico--camisas se ubique en la fila del 5 al 6, en pocas palabras en la segunda columna */
+        grid-column: 1 / 3;
+    }
+}
+
+.grafico--node {
+    grid-column: 1 / 3;
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6; /* Le estamos diciendo que el div que tiene la clase grafico--camisas se ubique en la fila del 5 al 6, en pocas palabras en la segunda columna */
+        grid-column: 2 / 4;
+    } 
+}
+
+@media (max-width: 390px) {
+    .grafico {
+    min-height: 0rem;
+    }
+}
+/* Nosotros */
+
+.nosotros {
+display: flex;
+flex-direction: row;
+align-items: center;
+margin: 0 3.5rem;
+gap: 4rem;
+}
+
+@media (max-width: 1000px) {
+    .nosotros {
+    flex-direction: column-reverse;
+    }
+}
+
+/* Beneficios */
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 .5rem;
+    
+}
+
+.beneficio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primarioOscuro);
+    border-radius: 2rem;
+    margin: 2rem 2rem;
+    border-color: var(--blanco);
+}
+
+@media (min-width: 390px) {
+    .beneficios {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto 4rem;
+        }   
+         .beneficio {
+            margin: 2rem 2rem;
+            } 
+}
+
+@media (min-width: 768px) {
+    .beneficios {
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto 4rem;
+    }   
+}
+
+@media (min-width: 1000px) {
+    .beneficios {
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto 4rem;
+    }   
+}
+
+.beneficio__contenido {
+margin: 2rem 2rem;
+align-items: center;
+}
+
+.beneficio__texto {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: auto 2rem;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.icono {
+max-height: 100%;
+margin: 2rem auto;
+}
+
