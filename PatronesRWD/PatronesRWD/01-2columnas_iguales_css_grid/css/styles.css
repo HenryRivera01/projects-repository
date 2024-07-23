@@ -1,0 +1,51 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* 
+Queremos con grid separar el contenido en dos columnas iguales,
+entonces vamos al elemento padre y le aplicamos grid, en este caso
+es contenedor, creamos una clase y sobre ella aplicamos un mq */
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    .dos-columnas{ 
+    display: grid;
+    grid-template-columns: 50% 50%; /*indicandole que el contenido se separe en dos columnas iguales y que ocupen cada una el 50% del espacio disponible*/
+    column-gap: 3.5rem; /*Separacion entre sus elementos*/
+    }
+}
