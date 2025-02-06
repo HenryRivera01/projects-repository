@@ -48,3 +48,24 @@ p {
 }
 
 /** CODIGO AQUI **/
+
+@media (min-width: 480px) {
+    .column-drop-flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; /*Como abajo en .primera se asigna el 50%, automaticamente se le asigna el 50 a la segunda y por ende la tercera debería ir hacia abajo, pero no lo hace, entonces con el flex-wrap: wrap se corrige eso y ya la tercera se acomoda abajo*/
+    }
+    .contenido-principal, 
+    .primera
+    {
+        flex-basis: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 768px) {
+    .contenido-principal,
+    .primera,
+    .segunda{
+        flex: 0 0 calc(33.3% - 2 rem);
+    }
+}

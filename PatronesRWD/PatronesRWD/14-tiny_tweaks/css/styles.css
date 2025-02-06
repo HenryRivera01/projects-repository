@@ -50,3 +50,19 @@ p {
 }
 
 /** CODIGO AQUI **/
+/*tiny-tweaks como su nombre lo dice hace pequeños
+ajustes según sea el tamaño del dispositivo sin cambiar mucho
+es como más tamaño de imagenes, tamaño de fuentes, etc... 
+*/
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+    h1{ 
+    font-size: 6rem;
+    text-align: left;
+    }
+}

@@ -49,3 +49,24 @@ p {
 
 
 /** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    .contenedor-grid{
+    display: grid;
+    grid-template-areas: "izquierda contenido derecha";
+    grid-template-columns: 20% 60% 20%; /*Metodo 1*/
+    grid-template-columns: 2fr 3fr 2fr; /*Met 2 Por cada pixel de los sidebar la columna del medio tomará tres*/
+    column-gap: 2rem;
+    grid-auto-flow: column; /*El flujo de posicionamiento será en columnas, evitando que se creen filas abajo*/        
+    }
+}
+
+.contenido-principal{
+    grid-column: 2/3; /*Met 1: Ordenando el contenido principal en la columna del medio que es donde se desea*/
+    grid-area: contenido;
+}
+
+.sidebar-1{
+    grid-column: izquierda;
+}
+

@@ -49,3 +49,16 @@ p {
 
 
 /** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    .con-sidebar {
+        display: flex;
+        gap: 4rem;
+    }/*A continuación se aplican los principios del factor proporcional de crecimiento*/
+    aside {
+        flex: 1; /*Del espacio disponible el aside recibe 1 pixel*/
+    }
+    article {
+        flex: 3; /*por cada pixel que recibe el aside el article recibe 3*/
+    }
+}

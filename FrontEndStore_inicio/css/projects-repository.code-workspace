@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "projects-repository",
+			"path": "../.."
+		},
+		{
+			"path": "D:/Descargas/PatronesRWD"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "PatronesRWD"
+	}
+}
